@@ -1,0 +1,14 @@
+class CreateReservations < ActiveRecord::Migration
+  def change
+    create_table :reservations do |t|
+      t.references :user, index: true
+      t.references :restaurant, index: true
+      t.time :time
+      t.integer :duration
+      t.date :date
+      t.integer :guests
+
+      t.timestamps
+    end
+  end
+end
