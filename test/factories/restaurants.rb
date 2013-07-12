@@ -2,12 +2,12 @@
 
 FactoryGirl.define do
   factory :restaurant do
-    address "MyString"
-    name "MyString"
-    price_range "MyString"
-    cuisine nil
-    capacity 1
-    opening_time 1
-    closing_time 1
+    address "Chinatown"
+    name "2 Wongs Don't Make a White"
+    price_range "Low"
+    cuisine_id 1
+    capacity 40
+    opening_time 9
+    closing_time 23
   end
 end

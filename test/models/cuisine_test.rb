@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class CuisineTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  setup do
+    @cuisine = FactoryGirl.create(:cuisine)
+  end
+
+  test 'Cuisine has many restaurants' do
+    assert @cuisine.respond_to?(:restaurants)
+  end
+
 end

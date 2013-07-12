@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :review do
-    content "MyString"
-    rating 1
-    user nil
-    restaurant nil
+    content "I like this restaurant."
+    rating 5
+    user_id 1
+    restaurant_id 1
   end
 end
