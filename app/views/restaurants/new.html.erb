@@ -17,10 +17,11 @@
   <%= f.text_field :capacity %><br />
 
   <%= f.label :opening_time %><br />
-  <%= f.time_select :opening_time, {ampm: true, ignore_date: true, minute_step: 15, default: {:hour => '09', :minute => '00'}}  %> <br />
+  <%= time_select :restaurant, :opening_time, {ampm: true, ignore_date: true, minute_step: 15, default: {:hour => '09', :minute => '00'}} %>
 
   <%= f.label :closing_time %><br />
-  <%= f.time_select :closing_time, {ampm: true, ignore_date: true, minute_step: 15, default: {:hour => '22', :minute => '00'}}  %><br />
+  <%= time_select :restaurant, :closing_time, {ampm: true, ignore_date: true, minute_step: 15, default: {:hour => '23', :minute => '00'}} %><br />
+
   <br />
   <%= f.submit %>
 
