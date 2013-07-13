@@ -5,3 +5,27 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Cuisines
+Cuisine.create(name: "Chinese")
+Cuisine.create(name: "British")
+Cuisine.create(name: "Italian")
+Cuisine.create(name: "Greek")
+
+# Restaurants
+Restaurant.create(address: "20 King St", name: "The Chinaman", price_range: "Low", cuisine_id: 1, capacity: 30, opening_time: 12, closing_time: 00)
+Restaurant.create(address: "20 Queen St", name: "The Italian", price_range: "Med", cuisine_id: 3, capacity: 60, opening_time: 12, closing_time: 23)
+
+# Users
+User.create(first_name: "James", last_name: "Cook", email: "jamesmarkcook@gmail.com", password_digest: "password")
+User.create(first_name: "Ben", last_name: "Liang", email: "benmliang@gmail.com", password_digest: "password")
+
+# Reservations
+
+Reservation.create(user_id: 1, restaurant_id: 1, time: "2013-07-14 20:00:00", duration: 2, guests: 5)
+Reservation.create(user_id: 1, restaurant_id: 1, time: "2013-07-14 21:00:00", duration: 2, guests: 2)
+
+# Reviews
+
+Review.create(content: "It was amazing!", rating: 5, user_id: 1, restaurant_id: 1)
+Review.create(content: "It was awful!", rating: 1, user_id: 2, restaurant_id: 3)

@@ -6,7 +6,6 @@ FactoryGirl.define do
     restaurant_id 1
     time "2013-07-12 16:29:25"
     duration 1
-    date "2013-07-12"
     guests 10
   end
 end
