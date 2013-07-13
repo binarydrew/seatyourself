@@ -1,0 +1,8 @@
+<h1>Restaurants</h1>
+  <% @restaurants.each do |restaurant| %>
+  <h2><%= restaurant.name %></h2><br />
+  <p class="cuisine"><%= restaurant.cuisine.name %></p>
+  <p class="open-until">Open from: <%= restaurant.opening_time %> - <%= restaurant.closing_time %></p>
+  <p class="price-range">Price: <%= restaurant.price_range %></p>
+  <p class="address">Address:<br /><%= restaurant.address %></p>
+  <% end %>

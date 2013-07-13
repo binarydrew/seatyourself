@@ -6,14 +6,15 @@ class RestaurantsController < ApplicationController
     
   end
 
+  def show
+    @restaurant = Restaurant.find(params[:id])
+  end
+
   def create
     @restaurant = Restaurant.new(restaurant_params)
 
-    @restaurant.opening_time = parsed_time(params[:restaurant]["opening_time(4i)"], params[:restaurant]["opening_time(5i)"])
-    @restaurant.closing_time = parsed_time(params[:restaurant]["closing_time(4i)"], params[:restaurant]["closing_time(5i)"])
-      
-      
-    
+    @restaurant.opening_time = @restaurant.parsed_time(params[:restaurant]["opening_time(4i)"], params[:restaurant]["opening_time(5i)"])
+    @restaurant.closing_time = @restaurant.parsed_time(params[:restaurant]["closing_time(4i)"], params[:restaurant]["closing_time(5i)"])
       
     @restaurant.save
     redirect_to restaurants_path
@@ -23,7 +24,17 @@ class RestaurantsController < ApplicationController
   def new
     @title = "Add a Restaurant"
     @restaurant = Restaurant.new
-    @cuisine = Cuisine.all
+    # @cuisine = Cuisine.all
+  end
+
+  def update
+    @restaurant = Restaurant.find(params[:id])
+    redirect_to @restaurant
+  end
+
+  def edit
+    @title = "Edit a Restaurant"
+    @restaurant = Restaurant.find(params[:id])
   end
 
   private
@@ -32,8 +43,8 @@ class RestaurantsController < ApplicationController
     params.require(:restaurant).permit(:name, :address, :price_range, :cuisine_id, :capacity)
   end
 
-  def parsed_time(hour, minute)
-    hour + ":" + minute
+  def find(time)
+    time.split
   end
 
 end

@@ -1,0 +1,27 @@
+<h1>Add a restaurant</h1>
+
+<%= form_for @restaurant do |f| %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %><br />
+
+  <%= f.label :address %><br />
+  <%= f.text_area :address, size: "50x10" %><br />
+
+  <%= f.label :price_range %><br />
+  <%= f.select(:price_range, [['Low ($0 - $10)', "Low"], ['Medium ($10 - $30)', "Medium"], ['High ($30+)', "High"]]) %><br />
+
+  <%= f.label :cuisine_id %><br />
+  <%= f.collection_select(:cuisine_id, Cuisine.all, :id, :name) %><br />
+
+  <%= f.label :capacity %><br />
+  <%= f.text_field :capacity %><br />
+
+  <%= f.label :opening_time %><br />
+  <%= f.time_select :opening_time, {ampm: true, ignore_date: true, minute_step: 15, default: {:hour => '09', :minute => '00'}}  %> <br />
+
+  <%= f.label :closing_time %><br />
+  <%= f.time_select :closing_time, {ampm: true, ignore_date: true, minute_step: 15, default: {:hour => '22', :minute => '00'}}  %><br />
+  <br />
+  <%= f.submit %>
+
+<% end %>
