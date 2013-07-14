@@ -61,6 +61,7 @@ class RestaurantsController < ApplicationController
     else
       flash[:alert] = "You can't delete a non-existent restaurant, sucka!"
       redirect_to restaurants_path
+    end
   end
 
   private
