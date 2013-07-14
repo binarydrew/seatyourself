@@ -49,8 +49,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "User needs a password" do
-    @user.password = ""
-    refute @user.valid?
+    user = FactoryGirl.build(:user, password: nil)
+    refute user.valid?
   end
 
   test "User needs a password_confirmation" do
@@ -65,9 +65,9 @@ class UserTest < ActiveSupport::TestCase
 
   test "when email address is already taken" do
     @user.save
-    user2 = FactoryGirl.build(:user2)
+    user2 = FactoryGirl.build(:user)
     user2.email = @user.email
-    refute @user.valid?
+    refute user2.valid?
   end
 
   test "When user name is too long" do

@@ -17,8 +17,8 @@ Restaurant.create(address: "20 King St", name: "The Chinaman", price_range: "Low
 Restaurant.create(address: "20 Queen St", name: "The Italian", price_range: "Medium", cuisine_id: 3, capacity: 60, opening_time: "12:00", closing_time: "23:00")
 
 # Users
-User.create(first_name: "James", last_name: "Cook", email: "jamesmarkcook@gmail.com", password_digest: "password")
-User.create(first_name: "Ben", last_name: "Liang", email: "benmliang@gmail.com", password_digest: "password")
+User.create(first_name: "James", last_name: "Cook", email: "jamesmarkcook@gmail.com", password: "password", password_confirmation: "password")
+User.create(first_name: "Ben", last_name: "Liang", email: "benmliang@gmail.com", password: "password", password_confirmation: "password")
 
 # Reservations
 
