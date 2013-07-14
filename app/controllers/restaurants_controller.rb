@@ -3,7 +3,7 @@ class RestaurantsController < ApplicationController
   def index
     @title = "Restaurants"
     @restaurants = Restaurant.all
-    
+
   end
 
   def show
@@ -15,7 +15,7 @@ class RestaurantsController < ApplicationController
     @restaurant.opening_time = @restaurant.parse_time(params[:restaurant]["opening_time(4i)"], params[:restaurant]["opening_time(5i)"])
     @restaurant.closing_time = @restaurant.parse_time(params[:restaurant]["closing_time(4i)"], params[:restaurant]["closing_time(5i)"])
     @restaurant.save
-    redirect_to restaurants_path 
+    redirect_to restaurants_path
   end
 
   def new
