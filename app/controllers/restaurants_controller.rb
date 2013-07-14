@@ -17,9 +17,9 @@ class RestaurantsController < ApplicationController
     
     if @restaurant.save
       redirect_to restaurants_path    
-      flash[:notice] = "Restaurant was successfully created"
+      flash[:notice] = "BOOM! Restaurant created, yo."
     else
-      flash[:notice] = "Restaurant could not be created."
+      flash[:alert] = "Idiot. I can't create a restaurant with invalid fields. Duh."
       render :new
     end
   end
@@ -34,8 +34,14 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @restaurant.opening_time = @restaurant.parse_time(params[:restaurant]["opening_time(4i)"], params[:restaurant]["opening_time(5i)"])
     @restaurant.closing_time = @restaurant.parse_time(params[:restaurant]["closing_time(4i)"], params[:restaurant]["closing_time(5i)"])
-    @restaurant.update_attributes(restaurant_params)
-    redirect_to @restaurant
+    
+    if @restaurant.update_attributes(restaurant_params)
+      redirect_to @restaurant
+      flash[:notice] = "YEAAAHHH!! Restaurant was successfully updated. Woo..fucking..hoo"
+    else
+      flash[:alert] = "Dude, WTF?! This shitty (probably Chinese) restaurant failed to update."
+      render :edit
+    end
   end
 
   def edit
@@ -48,8 +54,13 @@ class RestaurantsController < ApplicationController
 
   def destroy
     @restaurant = Restaurant.find(params[:id])
-    @restaurant.destroy
-    redirect_to restaurants_path
+    
+    if @restaurant.destroy
+      redirect_to restaurants_path
+      flash[:notice] = "You killed that muthafucking Restaurant!"
+    else
+      flash[:alert] = "You can't delete a non-existent restaurant, sucka!"
+      redirect_to restaurants_path
   end
 
   private
