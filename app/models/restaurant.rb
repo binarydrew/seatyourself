@@ -17,5 +17,7 @@ class Restaurant < ActiveRecord::Base
     time.on Date.new
   end
 
+  
+
 
 end

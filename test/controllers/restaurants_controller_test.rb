@@ -7,4 +7,6 @@ class RestaurantsControllerTest < ActionController::TestCase
     assert page.has_content?("Restaurants")
   end
 
+  
+
 end
