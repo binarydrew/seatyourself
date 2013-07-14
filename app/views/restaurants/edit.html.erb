@@ -17,10 +17,10 @@
   <%= f.text_field :capacity %><br />
 
   <%= f.label :opening_time %><br />
-  <%= f.time_select :opening_time, {ampm: true, ignore_date: true, minute_step: 15, default: {hour: '09', :minute => '00'}}  %> <br />
+  <%= f.time_select :opening_time, {ampm: false, ignore_date: true, minute_step: 15 }  %> <br />
 
   <%= f.label :closing_time %><br />
-  <%= f.time_select :closing_time, {ampm: true, ignore_date: true, minute_step: 15, default: {:hour => '22', :minute => '00'}}  %><br />
+  <%= f.time_select :closing_time, {ampm: false, ignore_date: true, minute_step: 15 }  %><br />
   <br />
   <%= f.submit %>
 
