@@ -16,7 +16,11 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    save_date_time
     @reservation = Reservation.new(reservation_params)
+    @reservation.user_id = current_user.id
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reservation.restaurant_id = @restaurant.id
 
     if @reservation.save
       redirect_to user_path(current_user)    
@@ -50,10 +54,18 @@ class ReservationsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+
+
   private
 
   def reservation_params
-    params.require(:reservation).permit(:time, :duration, :guests)
+    params.require(:reservation).permit(:datetime, :duration, :guests, :date, :time)
+  end
+
+  def save_date_time
+    time = params[:time]
+    date = params[:date]
+    params[:datetime] = date + time
   end
 
 
