@@ -22,8 +22,8 @@ User.create(first_name: "Ben", last_name: "Liang", email: "benmliang@gmail.com",
 
 # Reservations
 
-Reservation.create(user_id: 1, restaurant_id: 1, time: "2013-07-14 20:00:00", duration: 2, guests: 5)
-Reservation.create(user_id: 1, restaurant_id: 1, time: "2013-07-14 21:00:00", duration: 2, guests: 2)
+Reservation.create(user_id: 1, restaurant_id: 1, datetime: "2013-07-14 20:00:00", duration: 2, guests: 5)
+Reservation.create(user_id: 1, restaurant_id: 1, datetime: "2013-07-14 21:00:00", duration: 2, guests: 2)
 
 # Reviews
 
