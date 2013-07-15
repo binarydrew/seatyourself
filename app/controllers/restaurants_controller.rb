@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
 
+  before_filter :ensure_logged_in, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @title = "Restaurants"
     @restaurants = Restaurant.all

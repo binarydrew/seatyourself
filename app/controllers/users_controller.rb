@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to users_path    
       flash[:notice] = "User was successfully created"
     else
-      flash[:notice] = "User could not be created."
+      flash[:alert] = "User could not be created."
       render :new
     end
   end

@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
     too_short: 'Please enter a password with at least 6 characters'
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  
+  
 end

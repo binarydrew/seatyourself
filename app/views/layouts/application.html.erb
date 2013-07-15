@@ -8,11 +8,32 @@
 </head>
 <body>
 
-<% flash.each do |key, value| %>
-  <div class="<%= key %>"><%= value %></div>
-<% end %>
+  <div id="nav">
+    <div id="links">
+      <ul>
+        <li><%= link_to "Home", root_path %></li> | 
+        <li><%= link_to "Restaurants", restaurants_path %></li> | 
+        <li><%= link_to "Users", users_path %></li> | 
+      </ul>
+    </div>
+    <div id="login">
+      <% if current_user %>
+        <%= link_to "Logout #{current_user.first_name}", session_path(current_user), method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_session_path %>
+      <% end %>
+    </div>
+  </div>
 
-<%= yield %>
+
+
+  <% flash.each do |key, value| %>
+    <div class="<%= key %>"><%= value %></div>
+  <% end %>
+
+  <div id="container">
+  <%= yield %>
+  </div>
 
 </body>
 </html>
