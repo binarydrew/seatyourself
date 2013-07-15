@@ -3,4 +3,5 @@ SeatYourself::Application.routes.draw do
 
  resources :restaurants
  resources :users
+ resources :sessions, only: [:new, :create, :destroy]
 end
