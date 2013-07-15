@@ -1,0 +1,7 @@
+<h1>Reservations</h1>
+
+<% @reservations.each do |reservation| %>
+  <p>Start time: <%= reservation.time %></p>
+  <p>Duration: <%= reservation.duration %> hours</p>
+  <p>Guests: <%= reservation.guests %></p>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Create Reservation for <%= @restaurant.name %></h1>
+
+<%= form_for new_restaurant_reservation_path do |f| %>
+<%= f.label :time %>
+<%= f.time_select :time, { ampm: false, minute_step: 15 }%>
+
+<%= f.label :guests %>
+<%= f.select :guests %>
+
+<% end %>
