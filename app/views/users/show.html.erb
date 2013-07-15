@@ -13,7 +13,9 @@
     <h3><%= reservation.restaurant.name %></h3>
     <p><%= reservation.restaurant.address %></p>
 
-    <p>Guests: <%= reservation.guests %> | Time: <%= reservation.time %> | Duration: <%= reservation.duration %> hours</p>
+    <p>Guests: <%= reservation.guests %> | Time: <%= reservation.datetime %> | Duration: <%= reservation.duration %> hours</p>
+
+    <p><%= link_to "Edit Reservation", edit_restaurant_reservation_path(@restaurant, @reservation) %></p>
 
   </li>
 
