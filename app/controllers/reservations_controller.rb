@@ -32,12 +32,13 @@ class ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
-    @restaurant = @reservation.restaurant_id
-    
+    @restaurant = Restaurant.find(@reservation.restaurant_id)
+
   end
 
   def update
     @reservation = Reservation.find(params[:id])
+    @restaurant = Restaurant.find(@reservation.restaurant_id)
 
     if @reservation.update_attributes(reservation_params)
       redirect_to user_path(current_user)
@@ -53,6 +54,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to user_path(current_user)
+    flash[:alert] = "Reservation deleted"
   end
 
 

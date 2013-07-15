@@ -15,7 +15,8 @@
 
     <p>Guests: <%= reservation.guests %> | Time: <%= reservation.datetime %> | Duration: <%= reservation.duration %> hours</p>
 
-    <p><%= link_to "Edit Reservation", edit_restaurant_reservation_path(reservation.restaurant, reservation.id) %></p>
+    <p><%= link_to "Edit Reservation", edit_restaurant_reservation_path(reservation.restaurant, reservation.id) %> |
+    <%= link_to "Delete Reservation", [reservation.restaurant, reservation], confirm: "Are you sure you want to delete this reservation?", method: :delete %>
 
 
   </li>
