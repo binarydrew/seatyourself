@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @title = "Users"
     @user = User.find(params[:id])
   end
 
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @title = "Add User"
     @title = "Add a User"
     @user = User.new
   end
