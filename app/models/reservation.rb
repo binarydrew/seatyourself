@@ -2,7 +2,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :user
   belongs_to :restaurant
 
-  after_create :create_timeslot, if:
+  after_create :create_timeslot
 
   def create_timeslot
     timeslot = self.restaurant.timeslots.build # timeslots.new

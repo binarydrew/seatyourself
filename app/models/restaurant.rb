@@ -5,24 +5,17 @@ class Restaurant < ActiveRecord::Base
   belongs_to :cuisine
   has_many :reservations
   has_many :users, through: :reservations
-  has_many :reviews
-  has_many :timeslots
+  has_many :reviews 
 
 
-  def parse_time(hour)
-    TimeOfDay.new(hour).strftime("%H:%M")
+  def parse_time(hour, minute)
+    TimeOfDay.new(hour.to_i,minute.to_i).strftime("%H:%M")
   end
 
   def unparse_time(time)
     time = TimeOfDay.parse time
     time.on Date.new
-  end
+  end  
 
-  def show_available_seats
-    seats = self.timeslots.where()
-    Restaurant.first.timeslots.where(date: "2013-07-16", time: 21)
-
-    self.capacity - seats
-  end
 
 end
