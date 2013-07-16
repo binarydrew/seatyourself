@@ -52,7 +52,10 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'pry'
+group :development do
+  gem 'better_errors' # makes the errors we see in the browser more descriptive
+  gem 'pry-rails'
+end
 
 # Use unicorn as the app server
 # gem 'unicorn'
