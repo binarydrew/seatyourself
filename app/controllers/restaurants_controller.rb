@@ -13,6 +13,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+    binding.pr
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.opening_time = @restaurant.parse_time(params[:restaurant]["opening_time(4i)"], params[:restaurant]["opening_time(5i)"])
     @restaurant.closing_time = @restaurant.parse_time(params[:restaurant]["closing_time(4i)"], params[:restaurant]["closing_time(5i)"])
