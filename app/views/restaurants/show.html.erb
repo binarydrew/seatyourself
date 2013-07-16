@@ -1,4 +1,10 @@
 <h1><%= @restaurant.name %></h1>
+<ul>
+
+  <% @restaurant.timeslots.each do |timeslot| %>
+  <li><%= timeslot.date %> has <%= @restaurant.show_available_seats(timeslot) %> seats avaliable at <%= timeslot.time %>:00</li>
+  <% end %>
+</ul>
 
 <%= link_to "Edit Restaurant", edit_restaurant_path %>
 <%= link_to "Delete Restaurant", @restaurant, method: :delete %>

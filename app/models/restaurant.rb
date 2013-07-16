@@ -18,11 +18,9 @@ class Restaurant < ActiveRecord::Base
     time.on Date.new
   end
 
-  def show_available_seats
-    seats = self.timeslots.where()
-    Restaurant.first.timeslots.where(date: "2013-07-16", time: 21)
-
-    self.capacity - seats
+  def show_available_seats(timeslot)
+    seats = self.timeslots.where(restaurant_id: self.id, date: timeslot.date, time:timeslot.time)
+    self.capacity - seats.first.seats
   end
 
 end
