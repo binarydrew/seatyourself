@@ -6,6 +6,7 @@ class Restaurant < ActiveRecord::Base
   has_many :reservations
   has_many :users, through: :reservations
   has_many :reviews
+  has_many :timeslots
 
 
   def parse_time(hour, minute)
@@ -17,7 +18,7 @@ class Restaurant < ActiveRecord::Base
     time.on Date.new
   end
 
-  
+
 
 
 end
