@@ -1,12 +1,26 @@
-<div class="large-12 columns">
-<h1>Restaurants</h1>
-  <%  @restaurants.each do |restaurant| %>
-  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2><br />
-  <p class="cuisine"><%= restaurant.cuisine.name %></p>
-  <p class="open-until">Open from: <%= restaurant.opening_time %> - <%= restaurant.closing_time %></p>
-  <p class="price-range">Price: <%= restaurant.price_range %></p>
-  <p class="address">Address:<br /><%= restaurant.address %></p>
-  <% end %>
+<div class="row">
+	<div class="large-12 columns">
+		<ul data-orbit>
+			<li><%= image_tag("duck.jpg") %></li>
+			<li><%= image_tag("pizza.jpg") %></li>
+			<li><%= image_tag("sushi.jpg") %></li>
+		</ul>
+	</div>
+</div>
 
-  <%= link_to "Create Restaurant", new_restaurant_path %>
+<hr />
+
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Restaurants</h1>
+		  <%  @restaurants.each do |restaurant| %>
+		  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2><br />
+		  <p class="cuisine"><%= restaurant.cuisine.name %></p>
+		  <p class="open-until">Open from: <%= restaurant.opening_time %> - <%= restaurant.closing_time %></p>
+		  <p class="price-range">Price: <%= restaurant.price_range %></p>
+		  <p class="address">Address:<br /><%= restaurant.address %></p>
+		  <% end %>
+
+		  <%= link_to "Create Restaurant", new_restaurant_path %>
+	</div>
 </div>
