@@ -9,8 +9,8 @@ class Restaurant < ActiveRecord::Base
   has_many :timeslots
 
 
-  def parse_time(hour)
-    TimeOfDay.new(hour).strftime("%H:%M")
+  def parse_time(hour, minute)
+    TimeOfDay.new(hour.to_i,minute.to_i).strftime("%H:%M")
   end
 
   def unparse_time(time)
@@ -22,5 +22,6 @@ class Restaurant < ActiveRecord::Base
     seats = self.timeslots.where(restaurant_id: self.id, date: timeslot.date, time:timeslot.time)
     self.capacity - seats.first.seats
   end
+
 
 end

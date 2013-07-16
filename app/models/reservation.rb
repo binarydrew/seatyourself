@@ -4,6 +4,7 @@ class Reservation < ActiveRecord::Base
 
   after_create :check_timeslot_exists
 
+
   def create_timeslot
     timeslot = self.restaurant.timeslots.build # timeslots.new
     timeslot.time = self.datetime.hour
