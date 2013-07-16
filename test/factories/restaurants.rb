@@ -9,5 +9,6 @@ FactoryGirl.define do
     capacity 40
     opening_time 9
     closing_time 23
+    neighbourhood "Chinatown"
   end
 end

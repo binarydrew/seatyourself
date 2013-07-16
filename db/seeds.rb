@@ -13,8 +13,8 @@ Cuisine.create(name: "Italian")
 Cuisine.create(name: "Greek")
 
 # Restaurants
-Restaurant.create(address: "20 King St", name: "The Chinaman", price_range: "Low", cuisine_id: 1, capacity: 30, opening_time: "12:00", closing_time: "00:00")
-Restaurant.create(address: "20 Queen St", name: "The Italian", price_range: "Medium", cuisine_id: 3, capacity: 60, opening_time: "12:00", closing_time: "23:00")
+Restaurant.create(address: "20 King St", name: "The Chinaman", price_range: "Low", cuisine_id: 1, capacity: 30, opening_time: "12:00", closing_time: "00:00", neighbourhood: "Chinatown")
+Restaurant.create(address: "20 Queen St", name: "The Italian", price_range: "Medium", cuisine_id: 3, capacity: 60, opening_time: "12:00", closing_time: "23:00", neighbourhood: "Little Italy")
 
 # Users
 User.create(first_name: "James", last_name: "Cook", email: "jamesmarkcook@gmail.com", password: "password", password_confirmation: "password")
