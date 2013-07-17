@@ -36,7 +36,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    chunky_png (1.2.8)
     coderay (1.0.9)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -45,12 +44,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    compass (0.12.2)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-    compass-rails (1.0.3)
-      compass (>= 0.12.2, < 0.14)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -59,7 +52,6 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    fssm (0.2.10)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.4.2)
@@ -151,7 +143,6 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capybara
   coffee-rails (~> 4.0.0)
-  compass-rails
   factory_girl_rails
   jbuilder (~> 1.2)
   jquery-rails
