@@ -1,10 +1,48 @@
-<h1>Restaurants</h1>
-  <%  @restaurants.each do |restaurant| %>
-  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2><br />
-  <p class="cuisine"><%= restaurant.cuisine.name %></p>
-  <p class="open-until">Open from: <%= restaurant.opening_time %> - <%= restaurant.closing_time %></p>
-  <p class="price-range">Price: <%= restaurant.price_range %></p>
-  <p class="address">Address:<br /><%= restaurant.address %></p>
-  <% end %>
+<div class="row">
+	<div class="large-12 columns">
+		<ul data-orbit>
+			<li><%= image_tag("duck.jpg") %></li>
+			<li><%= image_tag("pizza.jpg") %></li>
+			<li><%= image_tag("sushi.jpg") %></li>
+		</ul>
+	</div>
+</div>
 
-  <%= link_to "Create Restaurant", new_restaurant_path %>
+<div class="row">
+<!-- 	<div class="large-3 large-offset-3 columns">
+	</div> -->
+
+	<div class="large-8 large-centered columns">
+		<!-- <div class="large-2 columns"> -->
+			<a href="#" class="default button dropdown">Cuisine</a>
+			<!-- 		<ul class="large success button dropdown">
+			<li>Chinese</li>
+			<li>Italian</li>
+			<li>Japanese</li> -->
+		<!-- </div> -->
+		<!-- <div class="large-2 columns"> -->
+			<a href="#" class="default button dropdown">Neighbourhood</a>
+			<a href="#" class="default button dropdown">Price Range</a>
+			<a href="#" class="button success">Search</a>
+		<!-- </div> -->
+	</div>
+<!-- 	<div class="large-3 large-offset-3 columns">
+	</div> -->
+</div>
+
+<hr />
+
+<div class="row">
+	<div class="large-12 columns">
+		<h1>Restaurants</h1>
+		  <%  @restaurants.each do |restaurant| %>
+		  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2><br />
+		  <p class="cuisine"><%= restaurant.cuisine.name %></p>
+		  <p class="open-until">Open from: <%= restaurant.opening_time %> - <%= restaurant.closing_time %></p>
+		  <p class="price-range">Price: <%= restaurant.price_range %></p>
+		  <p class="address">Address:<br /><%= restaurant.address %></p>
+		  <% end %>
+
+		  <%= link_to "Create Restaurant", new_restaurant_path %>
+	</div>
+</div>
