@@ -23,7 +23,7 @@ class ReservationsController < ApplicationController
     @reservation.restaurant_id = @restaurant.id
 
     if @reservation.save
-      redirect_to user_path(current_user)    
+      redirect_to user_path(current_user)
       flash[:notice] = "Reservation created"
     else
       flash[:alert] = "Reservation could not be created at this time. Sorry."

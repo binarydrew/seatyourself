@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130716225544) do
 
+# ActiveRecord::Schema.define(version: 20130716195847) do
+
+
   create_table "cuisines", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
